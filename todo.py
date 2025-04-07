@@ -11,7 +11,7 @@ def main(page: ft.Page):
         new_task.value = ""
         page.update()
 
-    new_task = ft.TextField(hint_text="What needs to be done?", width=300)
+    new_task = ft.TextField(hint_text="Dodaj bilješku", width=300)
     add_button = ft.ElevatedButton("Add", on_click=add_clicked)
     page.add(ft.Row([new_task, add_button], alignment=ft.MainAxisAlignment.CENTER), tasks)
 
