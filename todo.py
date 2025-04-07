@@ -23,12 +23,12 @@ class Task(ft.Column):
                     controls=[
                         ft.IconButton(
                             icon=ft.icons.CREATE_OUTLINED,
-                            tooltip="Edit To-Do",
+                            tooltip="Uredi biljesku",
                             on_click=self.edit_clicked,
                         ),
                         ft.IconButton(
                             ft.icons.DELETE_OUTLINE,
-                            tooltip="Delete To-Do",
+                            tooltip="Zbrisi biljesku",
                             on_click=self.delete_clicked,
                         ),
                     ],
@@ -77,7 +77,7 @@ class TodoApp(ft.Column):
     def __init__(self):
         super().__init__()
         self.new_task = ft.TextField(
-            hint_text="What needs to be done?", on_submit=self.add_clicked, expand=True
+            hint_text="Ke treba napraviti", on_submit=self.add_clicked, expand=True
         )
         self.tasks = ft.Column()
 
