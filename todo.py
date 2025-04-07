@@ -1,7 +1,7 @@
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "To-Do App"
+    page.title = "Aplikacija za biljeske"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     tasks = ft.Column()
