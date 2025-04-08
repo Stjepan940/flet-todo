@@ -77,7 +77,7 @@ class TodoApp(ft.Column):
     def __init__(self):
         super().__init__()
         self.new_task = ft.TextField(
-            hint_text="Ke treba napraviti", on_submit=self.add_clicked, expand=True
+            hint_text="Što treba napraviti", on_submit=self.add_clicked, expand=True
         )
         self.tasks = ft.Column()
 
@@ -85,7 +85,7 @@ class TodoApp(ft.Column):
             scrollable=False,
             selected_index=0,
             on_change=self.tabs_changed,
-            tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
+            tabs=[ft.Tab(text="sve"), ft.Tab(text="aktivno"), ft.Tab(text="gotovo")],
         )
 
         self.items_left = ft.Text("0 items left")
@@ -93,7 +93,7 @@ class TodoApp(ft.Column):
         self.width = 600
         self.controls = [
             ft.Row(
-                [ft.Text(value="Todos", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
+                [ft.Text(value="Biljeske", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
                 alignment=ft.MainAxisAlignment.CENTER,
             ),
             ft.Row(
@@ -151,9 +151,9 @@ class TodoApp(ft.Column):
         count = 0
         for task in self.tasks.controls:
             task.visible = (
-                status == "all"
-                or (status == "active" and task.completed == False)
-                or (status == "completed" and task.completed)
+                status == "sve"
+                or (status == "aktivno" and task.completed == False)
+                or (status == "gotovo" and task.completed)
             )
             if not task.completed:
                 count += 1
